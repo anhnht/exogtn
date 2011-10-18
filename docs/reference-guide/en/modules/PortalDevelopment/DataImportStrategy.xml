@@ -10,13 +10,13 @@
       <para>
         In the Portal extension mechanism, developers can define an extension
         that Portal data can be customized by configurations in the extension. There
-        are several cases which an extension developer wants to define how to customize the Portal data, 
-        for example modifying, overwriting or just inserting a bit into the data defined by the portal. 
+        are several cases which an extension developer wants to define how to customize the Portal data. 
+        For example: modifying, overwriting or just inserting a bit into the data defined by the portal. 
         Therefore, GateIn also defines several modes for each case and the only thing which a developer has to do is to clarify the
         usecase and reasonably configure extensions. 
       </para>
       <para>
-        This section shows you how data are changes in each mode.
+        This section shows you how data are changed in each mode.
       </para>
    </section>
    
@@ -49,7 +49,7 @@
         Each mode indicates how the Portal data are imported. The import mode value is
         set whenever NewPortalConfigListener is initiated. If the mode is not set,
         the default value will be used in this case. The default value is configurable as
-        a UserPortalConfigService initial param. For example, the bellow configuration
+        a UserPortalConfigService initial param. For example, the below configuration
         means that default value is <literal>MERGE</literal>
       </para>
       <programlisting role="XML"><![CDATA[
@@ -76,7 +76,7 @@
       <title>Data Import Strategy</title>
       The 'Portal Data' term which has been referred in the previous sections can be
       classified into three types of object data: Portal Config, Page Data and
-      Navigation Data; each of which has some differences in the import strategy.
+      Navigation Data; each of them has some differences in the import strategy.
       <section id="sect-Reference_Guide-Navigation_Data">
          <title>Navigation Data</title>
          The navigation data import strategy will be processed to the import mode level as the followings:
@@ -169,7 +169,7 @@
                <para>
                   With the <literal>CONSERVE</literal> mode, data are only imported when they do not exist. So, if
                   the navigation has been created by the <emphasis>navigation1</emphasis> definition, the <emphasis>navigation2</emphasis> definition
-                  does not affect anything on it. We have the result as following
+                  does not affect anything on it. We have the result as follows:
                </para>
                <mediaobject>
                   <imageobject>
@@ -213,7 +213,7 @@
                   Case 4: Import mode is <literal>OVERWRITE</literal>.
                </para>
                <para>
-                  Everything will be destroyed and replaced with new data if the <literal>OVERWRITE</literal> mode is used.
+                  Everything will be erased and replaced with new data if the <literal>OVERWRITE</literal> mode is used.
                </para>
                <mediaobject>
                   <imageobject>
@@ -239,7 +239,7 @@
                <literal>CONSERVE</literal>: There is nothing to be imported. The existing data will be kept without any changes.
             </listitem>
             <listitem>
-               <literal>INSERT</literal>: When the portal config does not exist, create the new portal defined by the portal config definition. Otherwise, do nothing.
+               <literal>INSERT</literal>: When the portal config does not exist, new portal will be created and defined by the portal config definition. Otherwise, do nothing.
             </listitem>
             <listitem>
                <literal>MERGE</literal> and <literal>OVERWRITE</literal> have the same behavior. The new portal config will be created if it does not exist or update portal properties defined by the portal config definition.
